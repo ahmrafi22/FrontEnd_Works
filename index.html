@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Works Showcase</title>
+    <style>
+      @import url("https://fonts.cdnfonts.com/css/roslindale");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Roslindale', serif;
+        background: #000000;
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        text-align: center;
+        margin: 2rem 0 1rem 0;
+        color: #ffffff;
+        text-transform: uppercase;
+      }
+      table {
+        margin: 2rem auto;
+        border-collapse: separate;
+        border-spacing: 2rem 2rem;
+        background: #c0bdbd;
+        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+        border-radius: 20px;
+      }
+      td {
+        vertical-align: top;
+        width: 400px;
+        padding: 1rem;
+        background: #fafbfc;
+        border-radius: 12px;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+        text-align: center;
+      }
+      .work-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin: 0.5rem 0 0.2rem 0;
+        color: #333;
+      }
+      .work-link {
+        color: #0078d7;
+        text-decoration: none;
+        font-size: 0.98rem;
+      }
+      .work-link:hover {
+        text-decoration: underline;
+      }
+      .work-gif {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 0.5rem;
+        background: #eaeaea;
+      }
+      @media (max-width: 900px) {
+        td {
+          width: 90vw;
+        }
+        table {
+          border-spacing: 1rem 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Frontend Works Showcase</h1>
+    <table>
+      <tbody id="works-table">
+        <!-- Showcase rows will be injected here -->
+      </tbody>
+    </table>
+    <script>
+      // Showcase data (title, url, gif filename)
+      const works = [
+        {
+          title: "Infinite Draggable Gallery",
+          url: "https://infinite-draggable-gallery.pages.dev/",
+          gif: "infinite-dragable-gallery.gif",
+        },
+        {
+          title: "Infinite Scroll Parallax",
+          url: "https://infinte-scroll-parallax.pages.dev/",
+          gif: "infinte-scroll-parallax.gif",
+        },
+        {
+          title: "Horizontal Scroll Parallax",
+          url: "https://horizontal-scroll-with-floating-parallax-effect.pages.dev/",
+          gif: "horizontal-scroll-parallax.gif",
+        },
+        {
+          title: "Hover Gallery",
+          url: "https://hover-gallery.pages.dev/",
+          gif: "hover-gallery.gif",
+        },
+        {
+          title: "Factorial Glass",
+          url: "https://factorial-glass.pages.dev/",
+          gif: "factoral-glass.gif",
+        },
+        {
+          title: "Parallax Effect React GSAP",
+          url: "https://parallax-effect-react-gsap.pages.dev/",
+          gif: "parallax-effect-react-gsap.gif",
+        },
+        {
+          title: "Silence Gallery",
+          url: "https://silence-gallery.pages.dev/",
+          gif: "silence-gallery.gif",
+        },
+        {
+          title: "Image With Text",
+          url: "https://image-with-text.pages.dev/",
+          gif: "image-with-text.gif",
+        },
+        {
+          title: "Cursor Hover Interaction",
+          url: "https://cursor-hover-interaction.pages.dev/",
+          gif: "cursor-hover-effect.gif",
+        },
+        {
+          title: "GSAP Flow Scroll",
+          url: "https://gsap-flow-scroll.vercel.app/",
+          gif: "gsap-flow.gif",
+        },
+        {
+          title: "Cursor Image Trail",
+          url: "https://cursor-image-trail.pages.dev/",
+          gif: "curosr-image-trail.gif",
+        },
+        {
+          title: "Cox Bazar",
+          url: "https://cox-eux.pages.dev/",
+          gif: "cox-bazar.gif",
+        },
+        {
+          title: "City End",
+          url: "https://city-end.tesingraff.workers.dev/",
+          gif: "city-end.gif",
+        },
+        {
+          title: "Mountain",
+          url: "https://mountain.tesingraff.workers.dev/",
+          gif: "mountain.gif",
+        },
+      ];
+
+      function createWorkCell(work) {
+        // Lazy loading gif with fallback alt
+        return `
+        <td>
+          <a href="${work.url}" target="_blank">
+            <img class="work-gif" loading="lazy" src="../gifs/${work.gif}" alt="${work.title} preview" />
+          </a>
+          <div class="work-title">${work.title}</div>
+          <a class="work-link" href="${work.url}" target="_blank">view</a>
+        </td>
+      `;
+      }
+
+      function renderTable() {
+        const table = document.getElementById("works-table");
+        let html = "";
+        for (let i = 0; i < works.length; i += 2) {
+          html += "<tr>";
+          html += createWorkCell(works[i]);
+          if (works[i + 1]) html += createWorkCell(works[i + 1]);
+          else html += "<td></td>";
+          html += "</tr>";
+        }
+        table.innerHTML = html;
+      }
+      renderTable();
+    </script>
+  </body>
+</html>
