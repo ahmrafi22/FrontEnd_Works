@@ -121,3 +121,24 @@
 	</tr>
 </table>
 </div>
+
+<div align="center">
+<table>
+	<tr>
+		<td align="center">
+			<a href="https://cosmic-hunt-8bit.vercel.app/" target="_blank">
+				<img src="gifs/cosmichunt8bit.gif" width="300" alt="Cosmis hunt 8bit"/>
+			</a><br/>
+			<b>Cosmis hunt 8bit</b><br/>
+			<a href="https://cosmic-hunt-8bit.vercel.app/" target="_blank">view</a>
+		</td>
+		<td align="center">
+			<a href="https://aubzz.vercel.app/" target="_blank">
+				<img src="gifs/salesdashboard.gif" width="300" alt="sales dashboard"/>
+			</a><br/>
+			<b>sales dashboard</b><br/>
+			<a href="https://aubzz.vercel.app/" target="_blank">view</a>
+		</td>
+	</tr>
+</table>
+</div>
